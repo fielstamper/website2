@@ -12,6 +12,10 @@ document.addEventListener("DOMContentLoaded", async function () {
     imageDiv.style.backgroundImage = `url(${data.image[3]['#text']})`;
     container.appendChild(imageDiv);
 
+    let currently = document.createElement("p");
+    currently.classList.add("currently-playing");
+    currently.text = "currently playing..."
+
     let lastfm = document.createElement("p");
     lastfm.classList.add("lastfm-text");
 
