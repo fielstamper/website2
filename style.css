@@ -120,6 +120,8 @@ body {
     background-position: center;
     border-radius: 10px;
     margin-right: 20px;
+    top: 50px;
+    margin-left: 30px;
 }
 
 .lastfm-text {
@@ -127,5 +129,5 @@ body {
     margin: 0;
     position: absolute;
     top: 50px;
-    margin-left: 50px;
+    margin-left: 70px;
 }
