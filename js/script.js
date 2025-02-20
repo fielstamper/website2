@@ -14,7 +14,11 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     let currently = document.createElement("p");
     currently.classList.add("currently-playing");
-    currently.appendChild(document.createTextNode("currently playing..."));
+    if (data['@attr'] && data['@attr'].nowplaying) {
+        currently.appendChild(document.createTextNode("currently playing..."));
+    } else {
+        currently.appendChild(document.createTextNode("last played..."));
+    }
 
     let lastfm = document.createElement("p");
     lastfm.classList.add("lastfm-text");
