@@ -1,7 +1,8 @@
 document.addEventListener("DOMContentLoaded", async function () {
 
     const response = await fetch('/api/lastfm');
-    const data = await response.json();
+    const jsonResponse = await response.json();
+    const data = jsonResponse['data'];
 
     let container = document.createElement("div");
     container.classList.add("container");
@@ -9,7 +10,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     let imageDiv = document.createElement("div");
     imageDiv.classList.add("image-div");
 
-    imageDiv.style.backgroundImage = `url(${data.image[2]['#text']})`;
+    imageDiv.style.backgroundImage = `url(${jsonResponse.image})`;
 
     let currently = document.createElement("p");
     currently.classList.add("currently-playing");
