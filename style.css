@@ -134,6 +134,7 @@ body {
 }
 
 .currently-playing {
+    position: absolute;
     font-weight: 500;
     top: 40px;
 }
