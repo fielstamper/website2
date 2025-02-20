@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     let imageDiv = document.createElement("div");
     imageDiv.classList.add("image-div");
 
-    imageDiv.style.backgroundImage = `url(${data.image[3]['#text']})`;
+    imageDiv.style.backgroundImage = `url(${data.image[2]['#text']})`;
 
     let currently = document.createElement("p");
     currently.classList.add("currently-playing");
