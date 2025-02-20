@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     lastfm.appendChild(document.createTextNode(`${data.artist['#text']} | ${data.album['#text']}`));
 
     container.appendChild(currently);
-
+    container.appendChild(imageDiv);
     container.appendChild(lastfm);
     document.body.appendChild(container);
 
