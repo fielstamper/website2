@@ -101,3 +101,28 @@ body {
 .nira_chan {
     color: rgb(228, 208, 155);
 }
+
+body {
+    background-color: #232323;
+    color: rgb(255, 255, 255);
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.image-div {
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.lastfm-text {
+    color: white;
+    margin: 0;
+}
