@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     let currently = document.createElement("p");
     currently.classList.add("currently-playing");
-    currently.text = "currently playing..."
+    currently.appendChild(document.createTextNode("currently playing..."));
 
     let lastfm = document.createElement("p");
     lastfm.classList.add("lastfm-text");
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     lastfm.appendChild(document.createTextNode(`${data.artist['#text']} | ${data.album['#text']}`));
 
     container.appendChild(currently);
-    container.appendChild(imageDiv);
+
     container.appendChild(lastfm);
     document.body.appendChild(container);
 
