@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", async function () {
     imageDiv.classList.add("image-div");
 
     imageDiv.style.backgroundImage = `url(${data.image[3]['#text']})`;
-    container.appendChild(imageDiv);
 
     let currently = document.createElement("p");
     currently.classList.add("currently-playing");
@@ -24,6 +23,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     lastfm.appendChild(document.createTextNode(`${data.artist['#text']} | ${data.album['#text']}`));
 
     container.appendChild(currently);
+    container.appendChild(imageDiv);
     container.appendChild(lastfm);
     document.body.appendChild(container);
 
