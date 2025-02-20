@@ -19,7 +19,9 @@ document.addEventListener("DOMContentLoaded", async function () {
     let lastfm = document.createElement("p");
     lastfm.classList.add("lastfm-text");
 
-    lastfm.appendChild(document.createTextNode(`${data.name}`));
+    const trackname = data.name.split('(feat. ')[0]
+
+    lastfm.appendChild(document.createTextNode(trackname));
     lastfm.appendChild(document.createElement("br"));
     lastfm.appendChild(document.createTextNode(`${data.artist['#text']} | ${data.album['#text']}`));
 
