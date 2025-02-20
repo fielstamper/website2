@@ -125,4 +125,7 @@ body {
 .lastfm-text {
     color: white;
     margin: 0;
+    position: absolute;
+    top: 50px;
+    margin-left: 50px;
 }
