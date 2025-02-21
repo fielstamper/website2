@@ -140,3 +140,10 @@ body {
     margin-left: 160px;
     font-size: 14px;
 }
+
+img {
+    width: 30%;
+    /* Adjust size dynamically */
+    max-width: 200px;
+    border: 2px solid #333;
+}
