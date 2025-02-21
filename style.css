@@ -173,22 +173,22 @@ body {
     border-radius: 10px;
     margin-right: 20px;
     position: absolute;
-    top: 90px;
-    margin-left: 530px;
+    top: 50px;
+    margin-left: 30px;
 }
 
 .lastfm-text {
     color: white;
     margin: 0;
     position: absolute;
-    top: 130px;
-    margin-left: 560px;
+    top: 0px;
+    margin-left: 160px;
 }
 
 .currently-playing {
     position: absolute;
     font-weight: 700;
-    top: 95px;
+    top: 55px;
     margin-left: 160px;
     font-size: 14px;
 }
