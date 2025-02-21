@@ -45,20 +45,50 @@ body {
 
 .pfpcontainer {
     display: flex;
-    align-items: flex-start;
-    justify-content: flex-end;
-    padding-right: 20px
+    justify-content: flex-start;
+    /* Keeps the image positioned manually */
 }
 
 .pfp {
     width: 15vw;
     max-width: 95px;
-    position: relative;
     margin-top: -110px;
     margin-left: 765px;
+    /* Pushes it 765px to the right */
     display: block;
-    border: 2px solid rgb(255, 228, 152)
+    border: 2px solid rgb(255, 228, 152);
 }
+
+/* Tablets & Smaller Screens */
+@media (max-width: 768px) {
+    .pfpcontainer {
+        justify-content: center;
+        /* Centers image */
+    }
+
+    .pfp {
+        width: 80px;
+        margin-top: -50px;
+        margin-left: 0;
+        /* Reset margin-left */
+    }
+}
+
+/* Mobile Phones */
+@media (max-width: 480px) {
+    .pfpcontainer {
+        justify-content: center;
+        /* Keeps image centered */
+    }
+
+    .pfp {
+        width: 60px;
+        margin-top: -30px;
+        margin-left: 0;
+        /* Reset margin-left */
+    }
+}
+
 
 .box {
     width: 800px;
