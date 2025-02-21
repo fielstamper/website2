@@ -117,7 +117,7 @@ body {
 .right_view_girl {
     width: 200px;
     position: absolute;
-    top: 730px;
+    top: 710px;
     margin-left: 970px;
     border: 2px solid #333;
 }
@@ -125,7 +125,7 @@ body {
 .front_view_girl {
     width: 200px;
     position: absolute;
-    top: 730px;
+    top: 710px;
     margin-left: 750px;
     border: 2px solid #333;
 }
@@ -133,7 +133,7 @@ body {
 .side_view_girl {
     width: 200px;
     position: absolute;
-    top: 730px;
+    top: 710px;
     margin-left: 530px;
     border: 2px solid #333;
 }
