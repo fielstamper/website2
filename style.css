@@ -1,5 +1,5 @@
 body {
-    background-color: #232323;
+    background-color: #181818;
     color: rgb(255, 255, 255);
     font-family: "Nunito", serif;
     font-optical-sizing: auto;
@@ -140,11 +140,6 @@ body {
 
 .nira_chan {
     color: rgb(228, 208, 155);
-}
-
-body {
-    background-color: #232323;
-    color: rgb(255, 255, 255);
 }
 
 .container {
