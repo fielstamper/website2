@@ -1,15 +1,15 @@
-document.addEventListener("DOMContentLoaded", async function () {
+document.addEventListener("DOMContentLoaded", lastfm)
 
-    const response = await fetch('/api/lastfm');
-    const data = await response.json();
-
+function addContainer(trackName, data) {
     let container = document.createElement("div");
     container.classList.add("container");
 
     let imageDiv = document.createElement("div");
     imageDiv.classList.add("image-div");
-
     imageDiv.style.backgroundImage = `url(${data.image[2]['#text']})`;
+
+    let lastfm = document.createElement("p");
+    lastfm.classList.add("lastfm-text");
 
     let currently = document.createElement("p");
     currently.classList.add("currently-playing");
@@ -19,12 +19,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         currently.appendChild(document.createTextNode("last played:"));
     }
 
-    let lastfm = document.createElement("p");
-    lastfm.classList.add("lastfm-text");
-
-    const trackname = data.name.split('(feat. ')[0]
-
-    lastfm.appendChild(document.createTextNode(trackname));
+    lastfm.appendChild(document.createTextNode(trackName));
     lastfm.appendChild(document.createElement("br"));
     lastfm.appendChild(document.createTextNode(`${data.artist['#text']} | ${data.album['#text']}`));
 
@@ -32,5 +27,27 @@ document.addEventListener("DOMContentLoaded", async function () {
     container.appendChild(imageDiv);
     container.appendChild(lastfm);
     document.body.appendChild(container);
+}
 
-});
+async function lastfm() {
+    try {
+        const response = await fetch('/api/lastfm');
+        const data = await response.json();
+
+        const trackName = data.name?.split('(feat. ')[0] || 'error';
+
+        const existingContainer = document.querySelector(".container");
+        const trackMatches = existingContainer?.querySelector('.lastfm-text')?.textContent.includes(trackName);
+
+        if (existingContainer && !trackMatches) {
+            existingContainer.remove();
+            addContainer(trackName, data);
+        } else if (!existingContainer) {
+            addContainer(trackName, data);
+        }
+    } catch (error) {
+        console.error("error: ", error);
+    }
+
+    setTimeout(lastfm, 3 * 1000); // 3 seconds
+}
