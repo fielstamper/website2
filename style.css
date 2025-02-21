@@ -150,7 +150,7 @@ body {
 .side_view_girl {
     width: 200px;
     position: absolute;
-    top: 710px;
+    top: 690px;
     margin-left: 530px;
     border: 2px solid #333;
 }
@@ -181,7 +181,7 @@ body {
     color: white;
     margin: 0;
     position: absolute;
-    top: 0px;
+    top: 90px;
     margin-left: 160px;
 }
 
