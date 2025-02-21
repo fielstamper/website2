@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     if (data['@attr'] && data['@attr'].nowplaying) {
         currently.appendChild(document.createTextNode("currently playing..."));
     } else {
-        currently.appendChild(document.createTextNode("last played..."));
+        currently.appendChild(document.createTextNode("last played:"));
     }
 
     let lastfm = document.createElement("p");
