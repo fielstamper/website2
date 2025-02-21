@@ -13,7 +13,7 @@ body {
     justify-content: flex-start;
     align-items: flex-start;
     padding-left: 530px;
-    margin-top: 90px;
+    margin-top: 30px;
     font-size: 16px;
     padding-bottom: 0px;
 }
@@ -195,10 +195,19 @@ img {
     user-select: none;
     color: rgb(255, 255, 255);
     border-radius: 5px;
+    font-weight: 400;
 }
 
 .Home:hover {
     color: rgb(83, 132, 207);
+}
+
+a.Home {
+    text-decoration: none;
+}
+
+a.Otherstuff {
+    text-decoration: none;
 }
 
 .Otherstuff {
@@ -213,6 +222,7 @@ img {
     user-select: none;
     color: rgb(255, 255, 255);
     border-radius: 5px;
+    font-weight: 400;
 }
 
 .Otherstuff:hover {
@@ -231,8 +241,13 @@ img {
     user-select: none;
     color: rgb(255, 255, 255);
     border-radius: 5px;
+    font-weight: 400;
 }
 
 .Contact:hover {
     color: rgb(83, 132, 207);
+}
+
+a.Contact {
+    text-decoration: none;
 }
