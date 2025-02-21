@@ -173,7 +173,7 @@ body {
     border-radius: 10px;
     margin-right: 20px;
     position: absolute;
-    top: 50px;
+    top: 90px;
     margin-left: 30px;
 }
 
@@ -181,14 +181,14 @@ body {
     color: white;
     margin: 0;
     position: absolute;
-    top: 110px;
+    top: 130px;
     margin-left: 160px;
 }
 
 .currently-playing {
     position: absolute;
     font-weight: 700;
-    top: 55px;
+    top: 95px;
     margin-left: 160px;
     font-size: 14px;
 }
