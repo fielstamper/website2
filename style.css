@@ -149,7 +149,7 @@ a.Contact {
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
-    padding-right: 30vw;
+    padding-left: 30vw;
 }
 
 .image-div {
