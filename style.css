@@ -157,6 +157,7 @@ a.Contact {
     height: 100px;
     background-size: cover;
     border-radius: 10px;
+    margin: 0;
 }
 
 .lastfm-text {
