@@ -166,3 +166,7 @@ a.Contact {
     font-weight: 700;
     font-size: 14px;
 }
+
+.text-container {
+    padding-left: 20px;
+}
