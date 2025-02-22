@@ -26,7 +26,7 @@ function addContainer(trackName, data) {
     container.appendChild(currently);
     container.appendChild(imageDiv);
     container.appendChild(lastfm);
-    document.body.appendChild(container);
+    document.getElementById("lastfm-container").appendChild(container);
 }
 
 async function lastfm() {
