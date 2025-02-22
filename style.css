@@ -92,7 +92,7 @@ body {
 }
 
 .Home:hover {
-    color: rgb(83, 132, 207);
+    color: rgb(115, 156, 218);
 }
 
 a.Home {
@@ -114,7 +114,7 @@ a.Home {
 }
 
 .About:hover {
-    color: rgb(83, 132, 207);
+    color: rgb(115, 156, 218);
 }
 
 a.About {
@@ -136,7 +136,7 @@ a.About {
 }
 
 .Contact:hover {
-    color: rgb(83, 132, 207);
+    color: rgb(115, 156, 218);
 }
 
 a.Contact {
