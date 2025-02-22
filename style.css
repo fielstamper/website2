@@ -225,3 +225,13 @@ a.Contact {
     font-size: 20px;
     margin: 0;
 }
+
+@media (max-width: 768px) {
+    .box {
+        width: 80vw;
+
+        min-width: 280px;
+
+        height: min(20vh, 110px);
+    }
+}
