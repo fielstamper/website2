@@ -182,6 +182,16 @@ a.Contact {
     display: flex;
 }
 
+.col1 {
+    display: flex;
+    flex-direction: column;
+}
+
+.col2 {
+    display: flex;
+    flex-direction: column;
+}
+
 .twitterbox {
     width: 20vw;
     height: 40vh;
