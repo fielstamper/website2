@@ -63,6 +63,8 @@ body {
         min-width: 280px;
 
         min-height: 45vh;
+
+        max-height: 45vh;
     }
 
     .line {
