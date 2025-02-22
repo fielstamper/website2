@@ -178,7 +178,10 @@ a.Contact {
 
 
 
+.contactbox {
+    display: flex;
 
+}
 
 .twitterbox {
     width: 20vw;
