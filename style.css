@@ -230,7 +230,7 @@ a.Contact {
     .twitterbox {
         width: 12vw;
 
-        min-width: 90px;
+        min-width: 110px;
 
         height: min(20vh, 110px);
     }
