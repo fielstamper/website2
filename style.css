@@ -195,6 +195,11 @@ a.Contact {
     align-items: flex-end;
 }
 
+.col3 {
+    display: flex;
+    flex-direction: column;
+}
+
 .twitterbox {
     width: 19vw;
     min-height: 150px;
