@@ -4,6 +4,9 @@ function addContainer(trackName, data) {
     let container = document.createElement("div");
     container.classList.add("container");
 
+    let textContainer = document.createElement("div");
+    textContainer.classList.add("text-container");
+
     let imageDiv = document.createElement("div");
     imageDiv.classList.add("image-div");
     imageDiv.style.backgroundImage = `url(${data.image[2]['#text']})`;
@@ -24,8 +27,9 @@ function addContainer(trackName, data) {
     lastfm.appendChild(document.createTextNode(`${data.artist['#text']} | ${data.album['#text']}`));
 
     container.appendChild(imageDiv);
-    container.appendChild(currently);
-    container.appendChild(lastfm);
+    textContainer.appendChild(currently);
+    textContainer.appendChild(lastfm);
+    container.appendChild(textContainer);
     document.getElementById("lastfm-container").appendChild(container);
 }
 
