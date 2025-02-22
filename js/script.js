@@ -30,7 +30,7 @@ function addContainer(trackName, data) {
     textContainer.appendChild(currently);
     textContainer.appendChild(lastfm);
     container.appendChild(textContainer);
-    document.getElementById("lastfm-container").appendChild(container);
+    document.body.appendChild(container);
 }
 
 async function lastfm() {
