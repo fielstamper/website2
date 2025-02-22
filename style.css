@@ -227,7 +227,7 @@ a.Contact {
 }
 
 @media (max-width: 768px) {
-    .box {
+    .twitterbox {
         width: 80vw;
 
         min-width: 280px;
