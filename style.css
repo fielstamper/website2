@@ -144,3 +144,23 @@ a.Contact {
 .nira_chan {
     color: #ffdf9a;
 }
+
+.container {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.image-div {
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.lastfm-text {
+    color: white;
+    margin: 0;
+}
