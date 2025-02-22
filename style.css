@@ -232,6 +232,6 @@ a.Contact {
 
         min-width: 70px;
 
-        height: min(20vh, 110px);
+        height: min(15vh, 110px);
     }
 }
