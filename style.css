@@ -150,7 +150,6 @@ a.Contact {
     align-items: flex-start;
     justify-content: flex-start;
     padding-top: 20px;
-    margin: 0;
 }
 
 .image-div {
@@ -171,4 +170,5 @@ a.Contact {
 
 .text-container {
     padding-left: 20px;
+    margin: 0;
 }
