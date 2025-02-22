@@ -23,8 +23,8 @@ function addContainer(trackName, data) {
     lastfm.appendChild(document.createElement("br"));
     lastfm.appendChild(document.createTextNode(`${data.artist['#text']} | ${data.album['#text']}`));
 
-    container.appendChild(currently);
     container.appendChild(imageDiv);
+    container.appendChild(currently);
     container.appendChild(lastfm);
     document.getElementById("lastfm-container").appendChild(container);
 }
