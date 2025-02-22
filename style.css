@@ -180,7 +180,6 @@ a.Contact {
 
 .contactbox {
     display: flex;
-
 }
 
 .twitterbox {
@@ -192,4 +191,5 @@ a.Contact {
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 15px;
     text-align: left;
+    flex: 1;
 }
