@@ -149,7 +149,6 @@ a.Contact {
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
-    padding: 20px;
 }
 
 .image-div {
@@ -166,6 +165,5 @@ a.Contact {
 
 .currently-playing {
     font-weight: 700;
-    top: 55px;
     font-size: 14px;
 }
