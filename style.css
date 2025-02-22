@@ -158,12 +158,10 @@ a.Contact {
     background-size: cover;
     background-position: center;
     border-radius: 10px;
-    margin-right: 20px;
 }
 
 .lastfm-text {
     color: white;
-    margin: 0;
 }
 
 .currently-playing {
