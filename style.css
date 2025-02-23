@@ -157,7 +157,7 @@ body {
 }
 
 .Home {
-    font-size: 17px;
+    font-size: 18px;
     padding: 8px 15px;
     cursor: pointer;
     background-color: rgba(255, 255, 255, 0);
@@ -178,7 +178,7 @@ a.Home {
 }
 
 .About {
-    font-size: 17px;
+    font-size: 18px;
     padding: 8px 15px;
     cursor: pointer;
     background-color: rgba(255, 255, 255, 0);
@@ -199,7 +199,7 @@ a.About {
 }
 
 .Contact {
-    font-size: 17px;
+    font-size: 18px;
     padding: 8px 15px;
     cursor: pointer;
     background-color: rgba(255, 255, 255, 0);
