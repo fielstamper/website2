@@ -181,7 +181,8 @@ body {
 }
 
 .Home:hover {
-    color: #9af1ff;
+    color: #3c59dd;
+    ;
 }
 
 a.Home {
@@ -202,7 +203,8 @@ a.Home {
 }
 
 .About:hover {
-    color: #9af1ff;
+    color: #3c59dd;
+    ;
 }
 
 a.About {
@@ -223,7 +225,8 @@ a.About {
 }
 
 .Contact:hover {
-    color: #9af1ff;
+    color: #3c59dd;
+    ;
 }
 
 a.Contact {
@@ -476,7 +479,7 @@ a.kosukadev {
 }
 
 .left-link:hover {
-    color: #9af1ff;
+    color: #3c59dd;
 }
 
 a.left-link {
