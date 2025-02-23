@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     gsap.set("body", { opacity: 1 });
 
     // Fade-in effect on load
-    gsap.from("body", { opacity: 0, duration: 0.3, ease: "expo.inOut" });
+    gsap.from("body", { opacity: 0, duration: 0.5, ease: "expo.inOut" });
 
     document.querySelectorAll("a").forEach(link => {
         const linkHref = link.href;
@@ -23,27 +23,21 @@ document.addEventListener("DOMContentLoaded", function () {
                         // Store the new page content
                         const newContent = doc.body.innerHTML;
 
-                        // **Now** fade out smoothly
-                        gsap.to("body", {
-                            opacity: 0,
-                            duration: 0.2,
-                            ease: "power2.in",
-                            onComplete: () => {
-                                document.body.innerHTML = newContent; // Swap in new content
-                                window.history.pushState({}, "", linkHref); // Update URL
+                        // Instantly replace content (no fade-out)
+                        document.body.innerHTML = newContent;
+                        window.history.pushState({}, "", linkHref); // Update URL
 
-                                // **Re-run script after swap**
-                                document.dispatchEvent(new Event("DOMContentLoaded"));
+                        // **Re-run script after swap**
+                        document.dispatchEvent(new Event("DOMContentLoaded"));
 
-                                // 🌟 Smoothly transition opacity back to 1
-                                gsap.to("body", { opacity: 1, duration: 0.3, ease: "power3.inOut" });
-                            }
-                        });
+                        // 🌟 Smoothly fade in new page
+                        gsap.from("body", { opacity: 0, duration: 0.5, ease: "expo.inOut" });
                     });
             });
         }
     });
 });
+
 
 
 document.addEventListener("DOMContentLoaded", lastfm)
