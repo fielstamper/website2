@@ -11,6 +11,25 @@ body {
     font-size: 16px;
 }
 
+.svgs {
+    display: flex;
+    justify-content: flex-start;
+    flex: 1;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+.discordsvg svg {
+    padding-top: 5px;
+    width: 2.5vw;
+    height: auto;
+}
+
+.twittersvg {
+    width: 2vw;
+    height: auto;
+    padding-top: 5px;
+}
 
 .title-container {
     display: flex;
@@ -98,7 +117,6 @@ body {
     }
 }
 
-
 .box2 {
     width: 15vw;
     background-color: rgba(28, 24, 28, 0.408);
@@ -112,10 +130,16 @@ body {
 
 .buttons {
     display: flex;
-    justify-content: right;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
     gap: 10px;
-    border: 2px solid #333;
     border-radius: 5px;
+}
+
+.button-border {
+    border: 2px solid #333;
+    display: flex;
 }
 
 .Home {

@@ -9,32 +9,8 @@ document.addEventListener("DOMContentLoaded", function () {
             const linkHref = link.href;
             const siteOrigin = window.location.origin;
 
-            if (linkHref.startsWith(siteOrigin)) {
-                link.addEventListener("click", function (e) {
-                    e.preventDefault(); // Prevent default link navigation
-
-                    fetch(linkHref)
-                        .then(response => response.text())
-                        .then(html => {
-                            const parser = new DOMParser();
-                            const doc = parser.parseFromString(html, "text/html");
-
-                            const newContent = doc.body.innerHTML;
-
-                            document.body.innerHTML = newContent;
-                            window.history.pushState({}, "", linkHref);
-
-                            setupPageTransitions();
-
-                            gsap.from("body", { opacity: 0, duration: 0.7, ease: "expo.out" });
-                        });
-                });
-            }
         });
     }
-
-    // Run once on initial load
-    setupPageTransitions();
 });
 
 document.addEventListener("DOMContentLoaded", lastfm)
