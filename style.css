@@ -13,7 +13,7 @@ body {
 
 .content-wrapper {
     opacity: 0;
-    animation: fadeIn 1s forwards;
+    animation: fadeIn 5s forwards;
 }
 
 @keyframes fadeIn {
