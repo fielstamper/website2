@@ -1,25 +1,44 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Smooth fade-in when the page loads
+    gsap.set("body", { opacity: 1 }); // Ensure content is visible
+
+    // Smooth fade-in on page load
     gsap.from("body", { opacity: 0, duration: 0.2, ease: "power2.out" });
 
-    // Add fade-out to all links before navigation
     document.querySelectorAll("a").forEach(link => {
         const linkHref = link.href;
-        const siteOrigin = window.location.origin; // Your site's base URL
+        const siteOrigin = window.location.origin;
 
-        if (linkHref.startsWith(siteOrigin)) { // Only apply to internal links
+        if (linkHref.startsWith(siteOrigin)) {
             link.addEventListener("click", function (e) {
-                e.preventDefault(); // Stop instant navigation
-                gsap.to("body", {
-                    opacity: 0,
-                    duration: 0.15,
-                    ease: "power2.in",
-                    onComplete: () => (window.location.href = linkHref) // Navigate after fade
-                });
+                e.preventDefault(); // Prevent default navigation
+
+                // Load the next page in the background
+                fetch(linkHref)
+                    .then(response => response.text())
+                    .then(html => {
+                        const parser = new DOMParser();
+                        const doc = parser.parseFromString(html, "text/html");
+
+                        // Store new page content
+                        const newContent = doc.body.innerHTML;
+
+                        // Fade out old page, then replace content
+                        gsap.to("body", {
+                            opacity: 0,
+                            duration: 0.15,
+                            ease: "power2.in",
+                            onComplete: () => {
+                                document.body.innerHTML = newContent; // Swap content
+                                window.history.pushState({}, "", linkHref); // Update URL
+                                gsap.from("body", { opacity: 0, duration: 0.3, ease: "power2.out" }); // Fade in new content
+                            }
+                        });
+                    });
             });
         }
     });
 });
+
 
 document.addEventListener("DOMContentLoaded", lastfm)
 
