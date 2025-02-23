@@ -1,5 +1,3 @@
-
-
 document.addEventListener("DOMContentLoaded", lastfm)
 
 function addContainer(trackName, data) {
