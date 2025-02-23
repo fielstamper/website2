@@ -25,6 +25,20 @@ body {
     height: auto;
 }
 
+@media (max-width: 768px) {
+
+    .twittersvg svg {
+        width: 7vw;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .discordsvg svg {
+        width: 8.5vw;
+    }
+}
+
 .twittersvg {
     width: 2vw;
     height: auto;
