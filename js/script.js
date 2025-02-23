@@ -32,14 +32,11 @@ document.addEventListener("DOMContentLoaded", function () {
                                 document.body.innerHTML = newContent; // Swap in new content
                                 window.history.pushState({}, "", linkHref); // Update URL
 
-                                // 🚀 **Force Reset Opacity Immediately**
-                                gsap.set("body", { opacity: 1 });
-
                                 // **Re-run script after swap**
                                 document.dispatchEvent(new Event("DOMContentLoaded"));
 
-                                // Fade-in the new page
-                                gsap.from("body", { opacity: 0, duration: 0.3, ease: "power2.out" });
+                                // 🌟 Smoothly transition opacity back to 1
+                                gsap.to("body", { opacity: 1, duration: 0.3, ease: "power2.out" });
                             }
                         });
                     });
