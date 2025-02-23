@@ -82,16 +82,8 @@ body {
 .line {
     height: 1px;
     background-color: #333;
-    width: 42vw;
+    width: 40vw;
     margin-top: 20px;
-}
-
-.linebottom {
-    height: 1px;
-    background-color: #333;
-    width: 42vw;
-    margin-top: 20px;
-    display: block;
 }
 
 .box-container {
@@ -145,7 +137,7 @@ body {
 }
 
 .box2 {
-    width: 15vw;
+    width: 13vw;
     background-color: rgba(207, 178, 245, 0.035);
     border: 2px solid #333;
     padding: 20px;
@@ -393,7 +385,7 @@ a.Contact {
     font-size: 18px;
     font-weight: 400;
     text-decoration: none;
-    width: 18.5vw;
+    width: 17.5vw;
     text-align: left;
     color: #ffffff;
 }
@@ -408,7 +400,7 @@ a.Contact {
     font-size: 18px;
     font-weight: 400;
     text-decoration: none;
-    width: 18.5vw;
+    width: 17.5vw;
     text-align: left;
     color: #ffffff;
 }
