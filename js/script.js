@@ -6,13 +6,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 leave(data) {
                     return gsap.to(data.current.container, {
                         opacity: 0,
-                        duration: 0.5
+                        duration: 0.2
                     });
                 },
                 enter(data) {
                     return gsap.from(data.next.container, {
                         opacity: 0,
-                        duration: 0.5
+                        duration: 0.3
                     });
                 }
             }
