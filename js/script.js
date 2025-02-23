@@ -1,8 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
-    gsap.set("body", { opacity: 1 }); // Ensure content is visible
+    // Ensure body is always visible
+    gsap.set("body", { opacity: 1 });
 
-    // Smooth fade-in on page load
-    gsap.from("body", { opacity: 0, duration: 0.2, ease: "power2.out" });
+    // Fade-in effect on load
+    gsap.from("body", { opacity: 0, duration: 0.3, ease: "power2.out" });
 
     document.querySelectorAll("a").forEach(link => {
         const linkHref = link.href;
@@ -10,27 +11,32 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (linkHref.startsWith(siteOrigin)) {
             link.addEventListener("click", function (e) {
-                e.preventDefault(); // Prevent default navigation
+                e.preventDefault(); // Prevent default link navigation
 
-                // Load the next page in the background
+                // Fetch the new page **in the background** first
                 fetch(linkHref)
                     .then(response => response.text())
                     .then(html => {
                         const parser = new DOMParser();
                         const doc = parser.parseFromString(html, "text/html");
 
-                        // Store new page content
+                        // Store the new page content
                         const newContent = doc.body.innerHTML;
 
-                        // Fade out old page, then replace content
+                        // **Now** fade out smoothly
                         gsap.to("body", {
                             opacity: 0,
-                            duration: 0.15,
+                            duration: 0.2,
                             ease: "power2.in",
                             onComplete: () => {
-                                document.body.innerHTML = newContent; // Swap content
+                                document.body.innerHTML = newContent; // Swap in new content
                                 window.history.pushState({}, "", linkHref); // Update URL
-                                gsap.from("body", { opacity: 0, duration: 0.3, ease: "power2.out" }); // Fade in new content
+
+                                // **Re-run script after swap**
+                                document.dispatchEvent(new Event("DOMContentLoaded"));
+
+                                // Fade-in the new page
+                                gsap.from("body", { opacity: 0, duration: 0.3, ease: "power2.out" });
                             }
                         });
                     });
