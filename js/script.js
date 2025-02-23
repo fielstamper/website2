@@ -32,11 +32,11 @@ document.addEventListener("DOMContentLoaded", function () {
                                 document.body.innerHTML = newContent; // Swap in new content
                                 window.history.pushState({}, "", linkHref); // Update URL
 
+                                // 🚀 **Force Reset Opacity Immediately**
+                                gsap.set("body", { opacity: 1 });
+
                                 // **Re-run script after swap**
                                 document.dispatchEvent(new Event("DOMContentLoaded"));
-
-                                // 🚀 FIX: Ensure opacity resets properly
-                                gsap.set("body", { opacity: 1 });
 
                                 // Fade-in the new page
                                 gsap.from("body", { opacity: 0, duration: 0.3, ease: "power2.out" });
