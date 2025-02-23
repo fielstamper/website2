@@ -219,7 +219,7 @@ a.Contact {
 }
 
 .nira_chan {
-    color: #9ad7ff
+    color: #a8b3de
 }
 
 .container {
@@ -326,4 +326,13 @@ a.Contact {
     width: 40px;
     height: auto;
     margin: 0;
+}
+
+.pythonemoji {
+    display: inline;
+    width: 2vw;
+    height: auto;
+    vertical-align: middle;
+    margin: 0;
+
 }
