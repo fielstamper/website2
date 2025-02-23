@@ -342,3 +342,68 @@ a.Contact {
         width: 7vw;
     }
 }
+
+.creativewrapper {
+    display: flex;
+    justify-content: row;
+    gap: 10px;
+}
+
+.nira-chan-box {
+    padding-top: 10px;
+    background-color: #1f1f1f;
+    border: 2px solid #333;
+    padding: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 400;
+    text-decoration: none;
+    width: 18.5vw;
+    text-align: left;
+    color: #ffffff;
+}
+
+.other-chan-box {
+    padding-top: 10px;
+    background-color: #1f1f1f;
+    border: 2px solid #333;
+    padding: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 400;
+    text-decoration: none;
+    width: 18.5vw;
+    text-align: left;
+    color: #ffffff;
+}
+
+.creative-text {
+    font-size: 16px;
+    color: rgb(180, 180, 180);
+}
+
+@media (max-width: 768px) {
+
+    .creativewrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nira-chan-box {
+        width: 80vw;
+
+        min-width: 140px;
+
+        height: auto;
+    }
+
+    .other-chan-box {
+        width: 80vw !important;
+
+        min-width: 140px;
+
+        height: auto;
+
+    }
