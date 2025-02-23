@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     gsap.set("body", { opacity: 1 });
 
     // Fade-in effect on load
-    gsap.from("body", { opacity: 0, duration: 0.3, ease: "expo.inOut" });
+    gsap.from("body", { opacity: 0, duration: 0.3, ease: "power2.out" });
 
     document.querySelectorAll("a").forEach(link => {
         const linkHref = link.href;
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                 document.dispatchEvent(new Event("DOMContentLoaded"));
 
                                 // 🌟 Smoothly transition opacity back to 1
-                                gsap.to("body", { opacity: 1, duration: 0.3, ease: "power3.inOut" });
+                                gsap.to("body", { opacity: 1, duration: 0.3, ease: "power2.out" });
                             }
                         });
                     });
