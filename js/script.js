@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Ensure main content is visible
-    gsap.set("#main-content", { opacity: 1 });
+    // Ensure content is visible immediately
+    gsap.set("#content-wrapper", { opacity: 1 });
 
     // Fade-in effect on load
-    gsap.from("#main-content", { opacity: 0, duration: 0.5, ease: "expo.inOut" });
+    gsap.from("#content-wrapper", { opacity: 0, duration: 0.5, ease: "expo.inOut" });
 
     document.querySelectorAll("a").forEach(link => {
         const linkHref = link.href;
@@ -20,21 +20,23 @@ document.addEventListener("DOMContentLoaded", function () {
                         const parser = new DOMParser();
                         const doc = parser.parseFromString(html, "text/html");
 
-                        // Extract the new main content
-                        const newContent = doc.querySelector("#main-content").innerHTML;
+                        // Extract new content
+                        const newContent = doc.querySelector("#content-wrapper").innerHTML;
 
-                        // Replace only the content, not the whole body
-                        const mainContent = document.querySelector("#main-content");
-                        gsap.to(mainContent, {
+                        // Fade out the current content
+                        gsap.to("#content-wrapper", {
                             opacity: 0,
                             duration: 0.3,
                             ease: "expo.inOut",
                             onComplete: () => {
-                                mainContent.innerHTML = newContent; // Swap content
-                                window.history.pushState({}, "", linkHref); // Update URL
+                                document.querySelector("#content-wrapper").innerHTML = newContent;
+                                window.history.pushState({}, "", linkHref);
 
-                                // Smoothly fade in the new content
-                                gsap.from(mainContent, { opacity: 0, duration: 0.5, ease: "expo.inOut" });
+                                // Re-run animations and scripts
+                                document.dispatchEvent(new Event("DOMContentLoaded"));
+
+                                // Fade in the new content
+                                gsap.to("#content-wrapper", { opacity: 1, duration: 0.5, ease: "expo.inOut" });
                             }
                         });
                     });
@@ -42,6 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
 
 
 
