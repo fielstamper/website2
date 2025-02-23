@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     // Smooth fade-in when the page loads
-    gsap.from("body", { opacity: 0, duration: 0.5, ease: "power2.out" });
+    gsap.from("body", { opacity: 0, duration: 0.3, ease: "power2.out" });
 
     // Add fade-out to all links before navigation
     document.querySelectorAll("a").forEach(link => {
@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 e.preventDefault(); // Stop instant navigation
                 gsap.to("body", {
                     opacity: 0,
-                    duration: 0.3,
+                    duration: 0.2,
                     ease: "power2.in",
                     onComplete: () => (window.location.href = linkHref) // Navigate after fade
                 });
