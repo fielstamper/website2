@@ -35,6 +35,9 @@ document.addEventListener("DOMContentLoaded", function () {
                                 // **Re-run script after swap**
                                 document.dispatchEvent(new Event("DOMContentLoaded"));
 
+                                // 🚀 FIX: Ensure opacity resets properly
+                                gsap.set("body", { opacity: 1 });
+
                                 // Fade-in the new page
                                 gsap.from("body", { opacity: 0, duration: 0.3, ease: "power2.out" });
                             }
