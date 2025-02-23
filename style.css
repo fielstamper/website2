@@ -10,15 +10,6 @@ body {
     justify-content: center;
 }
 
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
 
 .title-container {
     display: flex;
@@ -183,9 +174,6 @@ a.Contact {
     padding-left: 20px;
     margin: 0;
 }
-
-
-
 
 .contactbox {
     display: flex;

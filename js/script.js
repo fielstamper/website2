@@ -1,3 +1,42 @@
+document.addEventListener("DOMContentLoaded", function () {
+
+    gsap.set("body", { opacity: 1 });
+
+    gsap.from("body", { opacity: 0, duration: 0.7, ease: "expo.out" });
+
+    function setupPageTransitions() {
+        document.querySelectorAll("a").forEach(link => {
+            const linkHref = link.href;
+            const siteOrigin = window.location.origin;
+
+            if (linkHref.startsWith(siteOrigin)) {
+                link.addEventListener("click", function (e) {
+                    e.preventDefault(); // Prevent default link navigation
+
+                    fetch(linkHref)
+                        .then(response => response.text())
+                        .then(html => {
+                            const parser = new DOMParser();
+                            const doc = parser.parseFromString(html, "text/html");
+
+                            const newContent = doc.body.innerHTML;
+
+                            document.body.innerHTML = newContent;
+                            window.history.pushState({}, "", linkHref);
+
+                            setupPageTransitions();
+
+                            gsap.from("body", { opacity: 0, duration: 0.7, ease: "expo.out" });
+                        });
+                });
+            }
+        });
+    }
+
+    // Run once on initial load
+    setupPageTransitions();
+});
+
 document.addEventListener("DOMContentLoaded", lastfm)
 
 function addContainer(trackName, data) {
