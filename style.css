@@ -86,6 +86,14 @@ body {
     margin-top: 20px;
 }
 
+.linebottom {
+    height: 1px;
+    background-color: #333;
+    width: 42vw;
+    margin-top: 20px;
+    display: block;
+}
+
 .box-container {
     display: flex;
     gap: 10px;
@@ -314,6 +322,9 @@ a.Contact {
 
 .friends {
     padding-left: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
 }
 
 .link-box {
@@ -326,6 +337,22 @@ a.Contact {
 }
 
 .link-box img {
+    display: inline-block;
+    width: 40px;
+    height: auto;
+    margin: 0;
+}
+
+.link-box2 {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: #18181800;
+    border: 2px solid #ff9ac1;
+    margin: 0;
+}
+
+.link-box2 img {
     display: inline-block;
     width: 40px;
     height: auto;
