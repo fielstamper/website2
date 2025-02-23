@@ -11,7 +11,7 @@ body {
 }
 
 .content-wrapper {
-    animation: fadeIn 0.5s;
+    animation: fadeIn 0.2s;
 }
 
 @keyframes fadeIn {
