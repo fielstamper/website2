@@ -1,8 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Ensure body is fully visible immediately
+
     gsap.set("body", { opacity: 1 });
 
-    // Fade-in effect on load
     gsap.from("body", { opacity: 0, duration: 0.3, ease: "power2.out" });
 
     document.querySelectorAll("a").forEach(link => {
@@ -11,31 +10,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (linkHref.startsWith(siteOrigin)) {
             link.addEventListener("click", function (e) {
-                e.preventDefault(); // Prevent default link navigation
+                e.preventDefault();
 
-                // Fetch the new page **in the background** first
                 fetch(linkHref)
                     .then(response => response.text())
                     .then(html => {
                         const parser = new DOMParser();
                         const doc = parser.parseFromString(html, "text/html");
 
-                        // Store the new page content
                         const newContent = doc.body.innerHTML;
 
-                        // **Now** fade out smoothly
                         gsap.to("body", {
                             opacity: 0,
                             duration: 0.2,
                             ease: "power2.in",
                             onComplete: () => {
-                                document.body.innerHTML = newContent; // Swap in new content
-                                window.history.pushState({}, "", linkHref); // Update URL
+                                document.body.innerHTML = newContent;
+                                window.history.pushState({}, "", linkHref);
 
-                                // **Re-run script after swap**
                                 document.dispatchEvent(new Event("DOMContentLoaded"));
 
-                                // 🌟 Smoothly transition opacity back to 1
                                 gsap.to("body", { opacity: 1, duration: 0.3, ease: "power2.out" });
                             }
                         });
