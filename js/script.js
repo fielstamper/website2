@@ -1,48 +1,45 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Ensure content is visible immediately
-    gsap.set("#content-wrapper", { opacity: 1 });
+    function setupPageTransitions() {
+        document.querySelectorAll("a").forEach(link => {
+            const linkHref = link.href;
+            const siteOrigin = window.location.origin;
 
-    // Fade-in effect on load
-    gsap.from("#content-wrapper", { opacity: 0, duration: 0.5, ease: "expo.inOut" });
+            if (linkHref.startsWith(siteOrigin)) {
+                link.addEventListener("click", function (e) {
+                    e.preventDefault(); // Prevent default navigation
 
-    document.querySelectorAll("a").forEach(link => {
-        const linkHref = link.href;
-        const siteOrigin = window.location.origin;
+                    // Fetch new page content in the background
+                    fetch(linkHref)
+                        .then(response => response.text())
+                        .then(html => {
+                            const parser = new DOMParser();
+                            const doc = parser.parseFromString(html, "text/html");
 
-        if (linkHref.startsWith(siteOrigin)) {
-            link.addEventListener("click", function (e) {
-                e.preventDefault(); // Prevent default navigation
+                            // Extract new content
+                            const newContent = doc.querySelector("#content-wrapper").innerHTML;
 
-                // Fetch new page content in the background
-                fetch(linkHref)
-                    .then(response => response.text())
-                    .then(html => {
-                        const parser = new DOMParser();
-                        const doc = parser.parseFromString(html, "text/html");
+                            // Fade out the current content
+                            gsap.to("#content-wrapper", {
+                                opacity: 0,
+                                duration: 0.3,
+                                ease: "expo.inOut",
+                                onComplete: () => {
+                                    document.querySelector("#content-wrapper").innerHTML = newContent;
+                                    window.history.pushState({}, "", linkHref);
 
-                        // Extract new content
-                        const newContent = doc.querySelector("#content-wrapper").innerHTML;
-
-                        // Fade out the current content
-                        gsap.to("#content-wrapper", {
-                            opacity: 0,
-                            duration: 0.3,
-                            ease: "expo.inOut",
-                            onComplete: () => {
-                                document.querySelector("#content-wrapper").innerHTML = newContent;
-                                window.history.pushState({}, "", linkHref);
-
-                                // Re-run animations and scripts
-                                document.dispatchEvent(new Event("DOMContentLoaded"));
-
-                                // Fade in the new content
-                                gsap.to("#content-wrapper", { opacity: 1, duration: 0.5, ease: "expo.inOut" });
-                            }
+                                    // Re-run animations and rebind event listeners
+                                    setupPageTransitions(); // Rebind links
+                                    gsap.to("#content-wrapper", { opacity: 1, duration: 0.5, ease: "expo.inOut" });
+                                }
+                            });
                         });
-                    });
-            });
-        }
-    });
+                });
+            }
+        });
+    }
+
+    // Initial setup when the page loads
+    setupPageTransitions();
 });
 
 
