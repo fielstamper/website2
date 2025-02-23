@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Ensure body is always visible
+    // Ensure body is fully visible immediately
     gsap.set("body", { opacity: 1 });
 
     // Fade-in effect on load
