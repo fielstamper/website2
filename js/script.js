@@ -1,43 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
 
-    gsap.set("body", { opacity: 1 });
-
-    gsap.from("body", { opacity: 0, duration: 0.3, ease: "power2.out" });
-
-    document.querySelectorAll("a").forEach(link => {
-        const linkHref = link.href;
-        const siteOrigin = window.location.origin;
-
-        if (linkHref.startsWith(siteOrigin)) {
-            link.addEventListener("click", function (e) {
-                e.preventDefault();
-
-                fetch(linkHref)
-                    .then(response => response.text())
-                    .then(html => {
-                        const parser = new DOMParser();
-                        const doc = parser.parseFromString(html, "text/html");
-
-                        const newContent = doc.body.innerHTML;
-
-                        gsap.to("body", {
-                            opacity: 0,
-                            duration: 0.2,
-                            ease: "power2.in",
-                            onComplete: () => {
-                                document.body.innerHTML = newContent;
-                                window.history.pushState({}, "", linkHref);
-
-                                document.dispatchEvent(new Event("DOMContentLoaded"));
-
-                                gsap.to("body", { opacity: 1, duration: 0.3, ease: "power2.out" });
-                            }
-                        });
-                    });
-            });
-        }
-    });
-});
 
 document.addEventListener("DOMContentLoaded", lastfm)
 
