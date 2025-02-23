@@ -20,23 +20,20 @@ document.addEventListener("DOMContentLoaded", function () {
                         const parser = new DOMParser();
                         const doc = parser.parseFromString(html, "text/html");
 
-                        // Store the new page content
-                        const newContent = doc.body.innerHTML;
+                        // Get ONLY the main content (not entire body)
+                        const newContent = doc.querySelector(".content-wrapper").innerHTML;
 
                         // **Now** fade out smoothly
-                        gsap.to("body", {
+                        gsap.to(".content-wrapper", {
                             opacity: 0,
                             duration: 0.2,
                             ease: "power2.in",
                             onComplete: () => {
-                                document.body.innerHTML = newContent; // Swap in new content
+                                document.querySelector(".content-wrapper").innerHTML = newContent; // Swap content
                                 window.history.pushState({}, "", linkHref); // Update URL
 
-                                // **Re-run script after swap**
-                                document.dispatchEvent(new Event("DOMContentLoaded"));
-
-                                // Fade-in the new page
-                                gsap.from("body", { opacity: 0, duration: 0.3, ease: "power2.out" });
+                                // **Fade-in the new page**
+                                gsap.from(".content-wrapper", { opacity: 0, duration: 0.3, ease: "power2.out" });
                             }
                         });
                     });
@@ -44,6 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
 
 
 document.addEventListener("DOMContentLoaded", lastfm)
