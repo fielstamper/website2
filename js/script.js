@@ -1,49 +1,49 @@
 document.addEventListener("DOMContentLoaded", function () {
-    function setupPageTransitions() {
-        document.querySelectorAll("a").forEach(link => {
-            const linkHref = link.href;
-            const siteOrigin = window.location.origin;
+    // Ensure body is fully visible immediately
+    gsap.set("body", { opacity: 1 });
 
-            if (linkHref.startsWith(siteOrigin)) {
-                link.addEventListener("click", function (e) {
-                    e.preventDefault(); // Prevent default navigation
+    // Fade-in effect on load
+    gsap.from("body", { opacity: 0, duration: 0.3, ease: "expo.inOut" });
 
-                    // Fetch new page content in the background
-                    fetch(linkHref)
-                        .then(response => response.text())
-                        .then(html => {
-                            const parser = new DOMParser();
-                            const doc = parser.parseFromString(html, "text/html");
+    document.querySelectorAll("a").forEach(link => {
+        const linkHref = link.href;
+        const siteOrigin = window.location.origin;
 
-                            // Extract new content
-                            const newContent = doc.querySelector("#content-wrapper").innerHTML;
+        if (linkHref.startsWith(siteOrigin)) {
+            link.addEventListener("click", function (e) {
+                e.preventDefault(); // Prevent default link navigation
 
-                            // Fade out the current content
-                            gsap.to("#content-wrapper", {
-                                opacity: 0,
-                                duration: 0.3,
-                                ease: "expo.inOut",
-                                onComplete: () => {
-                                    document.querySelector("#content-wrapper").innerHTML = newContent;
-                                    window.history.pushState({}, "", linkHref);
+                // Fetch the new page **in the background** first
+                fetch(linkHref)
+                    .then(response => response.text())
+                    .then(html => {
+                        const parser = new DOMParser();
+                        const doc = parser.parseFromString(html, "text/html");
 
-                                    // Re-run animations and rebind event listeners
-                                    setupPageTransitions(); // Rebind links
-                                    gsap.to("#content-wrapper", { opacity: 1, duration: 0.5, ease: "expo.inOut" });
-                                }
-                            });
+                        // Store the new page content
+                        const newContent = doc.body.innerHTML;
+
+                        // **Now** fade out smoothly
+                        gsap.to("body", {
+                            opacity: 0,
+                            duration: 0.2,
+                            ease: "power2.in",
+                            onComplete: () => {
+                                document.body.innerHTML = newContent; // Swap in new content
+                                window.history.pushState({}, "", linkHref); // Update URL
+
+                                // **Re-run script after swap**
+                                document.dispatchEvent(new Event("DOMContentLoaded"));
+
+                                // 🌟 Smoothly transition opacity back to 1
+                                gsap.to("body", { opacity: 1, duration: 0.3, ease: "power3.inOut" });
+                            }
                         });
-                });
-            }
-        });
-    }
-
-    // Initial setup when the page loads
-    setupPageTransitions();
+                    });
+            });
+        }
+    });
 });
-
-
-
 
 document.addEventListener("DOMContentLoaded", lastfm)
 
