@@ -335,3 +335,10 @@ a.Contact {
     vertical-align: middle;
     margin: 0 -7px;
 }
+
+@media (max-width: 768px) {
+
+    .pythonemoji svg {
+        width: 7vw;
+    }
+}
