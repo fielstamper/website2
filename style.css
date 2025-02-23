@@ -11,9 +11,13 @@ body {
 }
 
 
-.content-wrapper {
+/* .content-wrapper {
     opacity: 0;
     animation: fadeIn 0.5s forwards;
+} */
+
+content-wrapper.fade-out {
+    opacity: 0;
 }
 
 @keyframes fadeIn {
