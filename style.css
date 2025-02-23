@@ -88,7 +88,7 @@ body {
 
 .box {
     width: 22vw;
-    background-color: rgba(14, 14, 14, 0.086);
+    background-color: #a8b3de11;
     border: 2px solid #333;
     padding: 20px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
@@ -133,7 +133,7 @@ body {
 
 .box2 {
     width: 15vw;
-    background-color: rgba(14, 14, 14, 0.086);
+    background-color: rgba(207, 178, 245, 0.035);
     border: 2px solid #333;
     padding: 20px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
