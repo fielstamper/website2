@@ -338,7 +338,7 @@ a.Contact {
 
 @media (max-width: 768px) {
 
-    .pythonemoji svg {
+    .pythonemoji {
         width: 7vw;
     }
 }
