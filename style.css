@@ -404,6 +404,16 @@ a.left-link {
     }
 }
 
+@media (max-width: 1024px) {
+
+    .locationbox,
+    .timebox {
+        width: 5vw;
+
+        min-width: 30px;
+    }
+}
+
 .locationbox img,
 .timebox img {
     width: 1.2vw;
@@ -413,11 +423,22 @@ a.left-link {
 
     .locationbox img,
     .timebox img {
-        width: 6vw;
+        width: 10vw;
+
+        min-width: 20px;
+    }
+}
+
+@media (max-width: 1024px) {
+
+    .locationbox img,
+    .timebox img {
+        width: 3vw;
 
         min-width: 15px;
     }
 }
+
 
 .icon-text {
     margin-left: 0;
