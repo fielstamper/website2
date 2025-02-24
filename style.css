@@ -352,3 +352,25 @@ a.left-link {
     justify-content: flex-start;
     gap: 15px;
 }
+
+.icon-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.project-link {
+    color: rgb(255, 195, 155);
+    flex-grow: 1;
+}
+
+.icon-container {
+    width: 30px;
+    height: auto;
+}
+
+.icon-container img {
+    width: 30px;
+    height: auto;
+}
