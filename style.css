@@ -458,3 +458,8 @@ a.left-link {
     justify-content: center;
     align-items: center;
 }
+
+.bottom-text {
+    color: rgb(180, 180, 180);
+    text-decoration: none;
+}
