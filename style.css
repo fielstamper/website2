@@ -372,13 +372,13 @@ a.Contact {
     }
 }
 
-.creativewrapper {
+.projectwrapper {
     display: flex;
     justify-content: row;
     gap: 10px;
 }
 
-.nira-chan-box {
+.projectcol1box {
     padding-top: 10px;
     background-color: #1f1f1f;
     border: 2px solid #333;
@@ -393,7 +393,7 @@ a.Contact {
     color: #ffffff;
 }
 
-.other-chan-box {
+.projectcol2box {
     padding-top: 10px;
     background-color: #1f1f1f;
     border: 2px solid #333;
@@ -415,12 +415,12 @@ a.Contact {
 
 @media (max-width: 768px) {
 
-    .creativewrapper {
+    .projectwrapper {
         flex-direction: column;
         align-items: center;
     }
 
-    .nira-chan-box {
+    .projectcol1box {
         width: 80vw;
 
         min-width: 140px;
@@ -428,7 +428,7 @@ a.Contact {
         height: auto;
     }
 
-    .other-chan-box {
+    .projectcol2box {
         width: 80vw !important;
 
         min-width: 140px;
@@ -525,4 +525,11 @@ a.left-link {
     width: 33.33%;
     height: 100%;
     object-fit: contain;
+}
+
+.abouttext {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 15px;
 }
