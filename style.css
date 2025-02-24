@@ -16,7 +16,7 @@ body {
 
 @media (max-width: 768px) {
     body {
-        background: linear-gradient(to bottom, #3c3c46 0%, #000000 60%);
+        background: linear-gradient(to bottom, #46444e, #635d6d, #7a7c83);
         background-repeat: no-repeat scroll;
         background-size: cover;
         background-attachment: fixed;
