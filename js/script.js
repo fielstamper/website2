@@ -72,6 +72,6 @@ async function lastfm() {
         console.error("error: ", error);
     }
 
-    setTimeout(lastfm, 3 * 1000); // 3 seconds
+    setTimeout(lastfm, 3 * 1000);
 }
 
