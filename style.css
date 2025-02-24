@@ -394,9 +394,29 @@ a.left-link {
     height: 3.4vh;
 }
 
+@media (max-width: 768px) {
+
+    .locationbox,
+    .timebox {
+        width: 7.5vw;
+
+        min-width: 15px;
+    }
+}
+
 .locationbox img,
 .timebox img {
     width: 1.2vw;
+}
+
+@media (max-width: 768px) {
+
+    .locationbox img,
+    .timebox img {
+        width: 6vw;
+
+        min-width: 15px;
+    }
 }
 
 .icon-text {
