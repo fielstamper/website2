@@ -1,5 +1,5 @@
 body {
-    background: linear-gradient(to bottom, #65657c, #000 100%);
+    background: linear-gradient(to bottom, #65657c, rgb(74, 74, 90), #000 100%);
     background-repeat: no-repeat scroll;
     background-size: cover;
     background-attachment: fixed;
