@@ -57,7 +57,7 @@ body {
 @media (max-width: 768px) {
 
     .line {
-        width: 85vw;
+        width: 90vw;
 
         min-width: 280px;
     }
