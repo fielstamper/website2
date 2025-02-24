@@ -1,14 +1,18 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    gsap.set("body", { opacity: 1 });
+    gsap.set("body", { opacity: 1, filter: "blur(5px)" }); // Apply blur at the start
 
-    gsap.from("body", { opacity: 0, duration: 0.7, ease: "expo.out" });
+    gsap.to("body", {
+        opacity: 1,
+        duration: 1,
+        ease: "expo.out",
+        filter: "blur(0px)", // Remove the blur effect during the transition
+    });
 
     function setupPageTransitions() {
         document.querySelectorAll("a").forEach(link => {
             const linkHref = link.href;
             const siteOrigin = window.location.origin;
-
         });
     }
 });
