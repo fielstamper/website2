@@ -1,12 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    gsap.set("body", { opacity: 1, filter: "blur(5px)" }); // Apply blur at the start
+    gsap.set("body", { opacity: 1, filter: "blur(5px)" });
 
     gsap.to("body", {
         opacity: 1,
         duration: 1,
         ease: "expo.out",
-        filter: "blur(0px)", // Remove the blur effect during the transition
+        filter: "blur(0px)",
     });
 
     function setupPageTransitions() {
