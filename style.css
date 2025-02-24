@@ -96,13 +96,13 @@ body {
 
 .box {
     width: 22vw;
-    border: 2px solid #c4baff69;
-    background-color: #a8b3de11;
+    border: 2px solid #333;
     padding: 20px;
     border-radius: 5px;
     font-size: 17px;
     font-weight: 400;
-    box-shadow: 0 0 2px 2px #c4baff69;
+    background-color: rgba(92, 79, 100, 0.035);
+    /* box-shadow: 0 0 2px 2px #c4baff69; */
 }
 
 
@@ -142,9 +142,9 @@ body {
 .box2 {
     width: 13vw;
     background-color: rgba(218, 178, 245, 0.035);
-    border: 2px solid #333;
+    /* border: 2px solid #333; */
     padding: 20px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 2px 2px #c4baff69;
     border-radius: 5px;
     font-size: 17px;
     font-weight: 400;
