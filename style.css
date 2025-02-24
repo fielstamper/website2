@@ -1,5 +1,5 @@
 body {
-    background: linear-gradient(to bottom, #46444e, #635d6d, #7a7c83);
+    background-color: #262626;
     background-repeat: no-repeat scroll;
     background-size: cover;
     background-attachment: fixed;
@@ -12,15 +12,6 @@ body {
     align-items: center;
     justify-content: center;
     font-size: 16px;
-}
-
-@media (max-width: 768px) {
-    body {
-        background: linear-gradient(to bottom, #46444e, #635d6d, #7a7c83);
-        background-repeat: no-repeat scroll;
-        background-size: cover;
-        background-attachment: fixed;
-    }
 }
 
 .svgs {
@@ -62,12 +53,6 @@ body {
     height: auto;
 }
 
-.title-container {
-    display: flex;
-    flex-direction: column;
-    height: 10vh;
-    max-width: 500vw;
-}
 
 .title-image-wrapper {
     display: flex;
@@ -81,7 +66,7 @@ body {
 }
 
 .title {
-    font-size: 15x;
+    margin-top: 0px;
 }
 
 .title-subtext {
@@ -93,9 +78,14 @@ body {
 
 .line {
     height: 1px;
-    background-color: #333;
+    background-color: #888888;
     width: 40vw;
     margin-top: 20px;
+    margin-bottom: 0px;
+}
+
+#subtitle-line {
+    margin-top: 20px !important;
 }
 
 .box-container {
@@ -109,7 +99,7 @@ body {
     border-radius: 5px;
     font-size: 17px;
     font-weight: 400;
-    background-color: #292929;
+    background-color: #1d1d1d;
     box-shadow: 0 0 4px 2px #c4baff;
 }
 
@@ -149,7 +139,8 @@ body {
 
 .box2 {
     width: 13vw;
-    background-color: #292929;
+    border: 2px solid #333;
+    background-color: #1d1d1d;
     padding: 20px;
     border-radius: 5px;
     font-size: 17px;
@@ -386,7 +377,7 @@ a.Contact {
 
 .projectcol1box {
     padding-top: 10px;
-    background-color: #292929;
+    background-color: #1d1d1d;
     border: 2px solid #333;
     padding: 20px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
@@ -401,7 +392,7 @@ a.Contact {
 
 .projectcol2box {
     padding-top: 10px;
-    background-color: #292929;
+    background-color: #1d1d1d;
     border: 2px solid #333;
     padding: 20px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
@@ -470,7 +461,7 @@ a.kosukadev {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    padding: 10px;
 }
 
 .left-link {
