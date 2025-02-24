@@ -463,3 +463,8 @@ a.left-link {
     color: rgb(180, 180, 180);
     text-decoration: none;
 }
+
+.bottom-text a {
+    color: rgb(180, 180, 180);
+    text-decoration: none;
+}
