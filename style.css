@@ -81,7 +81,7 @@ body {
 .line {
     height: 1px;
     background-color: #3b3b3b;
-    width: 40vw;
+    width: 39vw;
     margin-top: 20px;
     margin-bottom: 0px;
 }
@@ -387,7 +387,7 @@ a.Contact {
     font-size: 18px;
     font-weight: 400;
     text-decoration: none;
-    width: 17.5vw;
+    width: 17vw;
     text-align: left;
     color: #ffffff;
 }
@@ -402,7 +402,7 @@ a.Contact {
     font-size: 18px;
     font-weight: 400;
     text-decoration: none;
-    width: 17.5vw;
+    width: 17vw;
     text-align: left;
     color: #ffffff;
 }
@@ -463,7 +463,7 @@ a.kosukadev {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    padding-top: 10px;
 }
 
 .left-link {
