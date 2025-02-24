@@ -232,6 +232,17 @@ a.Contact {
     width: 17vw;
     text-align: left;
     color: #ffffff;
+    transition: all .1s ease-in-out;
+}
+
+.projectcol1box:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 2px 10px 4px #292929;
+}
+
+.projectcol2box:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 2px 10px 4px #292929;
 }
 
 .projectcol2box {
@@ -247,6 +258,7 @@ a.Contact {
     width: 17vw;
     text-align: left;
     color: #ffffff;
+    transition: all .1s ease-in-out;
 }
 
 .creative-text {
